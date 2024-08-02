@@ -57,7 +57,7 @@ pipeline {
                     git config user.name "Ramesh Babu M"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     #REPOSITORY_NAME="rameshm1/ultimate-cicd"
-                    sed -i 's|image: .*|image: rameshm1/ultimate-cicd:"${BUILD_NUMBER}"|' java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+                    sed -i 's|image: .*|image: rameshm1/ultimate-cicd:${BUILD_NUMBER}|' java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     #sed -i "s/image: ${REPOSITORY_NAME}:.*/image: ${REPOSITORY_NAME}:${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
